@@ -60,7 +60,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: #D04848;
     color: #fff;
     transition: all 0.3s;
     height: 100dvh;
@@ -71,18 +71,32 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    padding: 32px 10px 25px 10px;
+    background-image: url('../images/Buildings/aclcbukidn.png'); /* Replace with your image path */
+      background-size: contain; /* Cover the entire container */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* No repeating of the image */
+      border-bottom: 3px solid #5263aa;
+      border-top: 3px solid #5263aa;
+      background-color: #6d7fcc;
+
+      text-shadow: 2px 0 #5263aa, -2px 0 #9c3d3d, 0 2px #5263aa, 0 -2px #9c3d3d,
+      1px 1px #9c3d3d, -1px -1px #5263aa, 1px -1px #9c3d3d, -1px 1px #5263aa;
+
+      text-align: center;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    padding: 0px 0;
+    border-bottom: 3px solid #9c3d3d;
 }
 
 #sidebar ul p {
     color: #fff;
-    padding: 10px;
+    font-weight: bold;
+    padding: 20px 5px;
+    margin-bottom: 0px;
+    border-bottom: 3px solid #9c3d3d;
 }
 
 #sidebar ul li a {
@@ -92,14 +106,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #232a47;
+    background: pink;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+    color: #000000;
+    background: rgb(255, 164, 181);
 }
 
 a[data-toggle="collapse"] {
@@ -117,7 +131,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background:  rgb(201, 136, 147);
 }
 
 ul.CTAs {
@@ -131,18 +145,6 @@ ul.CTAs a {
     border-radius: 5px;
     margin-bottom: 5px;
 }
-
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
-}
-
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
