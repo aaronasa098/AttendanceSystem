@@ -31,10 +31,10 @@
 
             <ul class="list-unstyled components">
                 <p>Dummy Heading</p>
-                <li class="active" id="home_btn">
+                <li class="active" id="sb_home_btn">
                     <a href="#">Home</a>
                 </li>
-                <li>
+                <li id="sb_abouts_btn">
                     <a href="#">About</a>
                 </li>
                 <li>
@@ -92,6 +92,13 @@
             <script>
                 // Load initial content
                 $('#content').load('Dashboard.php');
+                // Update clock every second
+                
+                // Handle button clicks
+                $('#sb_abouts_btn').click(function(){
+                    $('#content').empty();
+                });
+            
             </script>
         </div>
     </div>
