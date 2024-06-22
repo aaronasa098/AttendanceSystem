@@ -64,6 +64,7 @@ a:focus {
     color: #fff;
     transition: all 0.3s;
     height: 100dvh;
+    border-right: 3px solid white;
 }
 
 #sidebar.active {
@@ -152,11 +153,9 @@ ul.CTAs a {
 #content {
     width: 100%;
     padding: 20px;
-    height: calc(100dvh);
+    height: calc(100dvh - 76px);
     transition: all 0.3s;
     overflow-y: scroll;
-    border-left: 3px solid white;
-    border-right: 3px solid white;
     background: linear-gradient(to left, #04879C, #0C3C78, #090030, #D04848);
 }
 
