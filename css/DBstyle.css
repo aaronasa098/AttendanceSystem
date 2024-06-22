@@ -152,7 +152,7 @@ ul.CTAs a {
 #content {
     width: 100%;
     padding: 20px;
-    height: calc(100dvh - 70px);
+    height: calc(100dvh);
     transition: all 0.3s;
     overflow-y: scroll;
     border-left: 3px solid white;
