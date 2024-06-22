@@ -8,32 +8,10 @@
         margin-bottom: 0px;
     }
 
-    #clock {
+    #clock { 
         font-size: larger;
     }
 
-    /* Basic styling for demonstration */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-        background-color: white;
-    }
-    table, th, td {
-        border: 1px solid #ccc;
-        padding: 8px;
-        text-align: center;
-    }
-    button {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #45a049;
-    }
 </style>
 
 <div id="BOX">
@@ -41,27 +19,6 @@
     <div id="clock"></div>
 </div>
 <br>
-<table style="border: 5px solid black;">
-    <thead>
-        <tr>
-            <th>EntryCode</th>
-            <th>USN</th>
-            <th>Date</th>
-            <th>Time Entered</th>
-            <th>Time Exited</th>
-            <th>EntryType</th>
-            <th>Attendee</th>
-        </tr>
-    </thead>
-    <tbody id="attendanceTable">
-        <!-- Table rows will be dynamically added here -->
-    </tbody>
-</table>
-
-<button onclick="addAttendance()">Add Attendance</button>
-
-
-
 
 <script>
     function updateClock() {
@@ -87,29 +44,5 @@
 
     // Update clock every second
     setInterval(updateClock, 1000);
-
-    function addAttendance() {
-    // Example data (you can replace this with actual data collection logic)
-    var entryCode = 'E123';
-    var usn = '12345';
-    var date = '2024-06-22';
-    var timeEntered = '10:00 AM';
-    var timeExited = '12:00 PM';
-    var entryType = 'Student';
-    var attendee = 'John Doe';
-
-    // Create a new row
-    var newRow = `<tr>
-                    <td>${entryCode}</td>
-                    <td>${usn}</td>
-                    <td>${date}</td>
-                    <td>${timeEntered}</td>
-                    <td>${timeExited}</td>
-                    <td>${entryType}</td>
-                    <td>${attendee}</td>
-                </tr>`;
-
-    // Append the new row to the table
-    document.getElementById("attendanceTable").innerHTML += newRow;
-}
 </script>
+

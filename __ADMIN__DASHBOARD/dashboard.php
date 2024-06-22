@@ -1,42 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home Page</title>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="CSS/Universal.css"/>
-
 <style>
-        /* Additional CSS for styling the modal */
-    .modal-header {
-      background-color: #007bff;
-      color: white;
+    #BOX {
+        border: 5px solid black;
+        background-color: white;
+        text-align: center;
     }
-    .modal-footer button {
-      margin-right: 5px;
+    #BOX h1{
+        margin-bottom: 0px;
     }
-        .sort-indicator {
-            font-size: 0.75em;
-            margin-left: 5px;
-        }
-        /* Custom CSS for dropdown animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0px); }
-        }
 
-        .dropdown-menu {
-            display: none;
-            animation: fadeIn 0.3s ease-in;
-        }
+    #clock { 
+        font-size: larger;
+    }
 
-        .dropdown-menu.show {
-            display: block;
-        }
 </style>
+
+<div id="BOX">
+    <h1>DAILY ATTENDANCE</h1>
+    <div id="clock"></div>
+</div>
+
 <script>
-    const tableData = [
+    function updateClock() {
+        const now = new Date();
+        const date = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        let period = 'AM';
+
+        if (hours > 12) {
+            hours -= 12;
+            period = 'PM';
+        } else if (hours === 12) {
+            period = 'PM';
+        } else if (hours === 0) {
+            hours = 12; // Midnight (12 AM)
+        }
+
+        const timeString = `${hours}:${minutes}:${seconds} ${period}`;
+        document.getElementById('clock').innerHTML = `${date} // ${timeString}`;
+    }
+
+    // Update clock every second
+    setInterval(updateClock, 1000);
+</script>
+
+
+
+<script>
+    tableData = [
     { DATE: '2024-05-01', TIME: '08:30 AM', USN: '1234567890', Name: 'John Doe', Attendee: 'SHS student' },
     { DATE: '2024-05-01', TIME: '09:00 AM', USN: '2345678901', Name: 'Jane Smith', Attendee: 'College Student' },
     { DATE: '2024-05-01', TIME: '09:30 AM', USN: '3456789012', Name: 'Emily Johnson', Attendee: 'Instructor' },
@@ -250,16 +262,11 @@
             updateTable();
         }
 
-
-
         window.onload = setupTable;
-
-</script>
+</script>      
 </head>
-<body style="padding-top: 50px;">
-    <?php include 'Nav/navbar.php'; ?>
 
-    <div class="container mt-4 rounded text-nowrap" style="border: solid 10px; background-color: white; min-height: 625px;">
+    <div class="container mt-3 mb-3 rounded text-nowrap" style="border: solid 10px; background-color: white; min-height: 625px;">
         <b><center class="mb-2 mt-2" style="font-size: 30px;">MAIN ENTRANCE ENTRY</center></b>
         <!-- Search input -->
         <div class="mb-3">
@@ -360,7 +367,6 @@
   </div>
 </div>
 
-<?php include 'Nav/footer.php'; ?>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -393,5 +399,4 @@
     }
   }
 </script>
-</body>
-</html>
+
