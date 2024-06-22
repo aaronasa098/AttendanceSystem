@@ -16,6 +16,9 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!-- AJA -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -28,19 +31,8 @@
 
             <ul class="list-unstyled components">
                 <p>Dummy Heading</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
+                <li class="active" id="home_btn">
+                    <a href="#">Home</a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -77,9 +69,8 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #9c3d3d; border-color: #5263aa;">
-                        <i class="fas fa-align-left"></i>
-                        <span></span>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #5263aa; border-color: #9c3d3d;">
+                        <img src="images/favicon.ico">
                     </button>
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
@@ -95,9 +86,13 @@
                 </div>
             </nav>
             <!--INSIDE CONTENT-->
-            <div id="content" style="background-color: green;">
-
+            <div id="content">
+                
             </div>
+            <script>
+                // Load initial content
+                $('#content').load('page1.html');
+            </script>
         </div>
     </div>
 

@@ -14,7 +14,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    color: #000000;
 }
 
 a,
@@ -154,6 +154,10 @@ ul.CTAs a {
     padding: 20px;
     height: calc(100dvh - 70px);
     transition: all 0.3s;
+    overflow-y: scroll;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    background: linear-gradient(to left, #04879C, #0C3C78, #090030, #D04848);
 }
 
 /* ---------------------------------------------------
