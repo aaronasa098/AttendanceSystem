@@ -2,23 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height,">
-    <title>Document</title>
-
-    <!--PluginScripts-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!--PAGE STYLE-->
-    <link rel="stylesheet" href="css/LoginCSS.css">
-
-    <!--UNIVERSAL DESIGN-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="ASSETS/favicon.ico">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/Universal.css">
 </head>
-
-<body style="margin: 0; padding: 0;">
-    <div id="ContentBody">
-    <section class="p-3 p-md-4 p-xl-5">
+<body>
+  <section class="p-3 p-md-4 p-xl-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-xxl-11">
@@ -74,7 +65,8 @@
                     <div class="row">
                       <div class="col-12">
                         <div class="d-flex gap-2 gap-md-4 flex-md-row justify-content-md-center mt-2 justify-content-center">
-                          <a href="#!" class="link-secondary text-decoration-none">Forgot password</a>
+                          <a href="#!" class="link-secondary text-decoration-none mr-3">Create new account</a>
+                          <a href="#!" class="link-secondary text-decoration-none ml-3">Forgot password</a>
                         </div>
                       </div>
                     </div>
@@ -87,13 +79,5 @@
       </div>
     </div>
   </section>
-    </div>
-    <?php include 'Nav/NavFooter.php';?>
-
-<!--EndScript-->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
