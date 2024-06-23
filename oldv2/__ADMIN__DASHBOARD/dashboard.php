@@ -42,7 +42,7 @@
     }
 
     // Update clock every second
-    setInterval(updateClock, 1000);
+    var clocktimer = setInterval(updateClock, 1000);
 </script>
 
 
@@ -262,9 +262,9 @@
             updateTable();
         }
 
-        window.onload = setupTable;
+        setupTable();
 </script>      
-</head>
+
 
     <div class="container mt-3 mb-3 rounded text-nowrap" style="border: solid 10px; background-color: white; min-height: 625px;">
         <b><center class="mb-2 mt-2" style="font-size: 30px;">MAIN ENTRANCE ENTRY</center></b>
@@ -367,9 +367,7 @@
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script>
   $(document).ready(function(){
     // Get current date and time
