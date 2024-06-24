@@ -1,7 +1,7 @@
 <script>
     function updateClock() {
         const now = new Date();
-        const date = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const date = now.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric' });
         let hours = now.getHours();
         const minutes = now.getMinutes().toString().padStart(2, '0');
         const seconds = now.getSeconds().toString().padStart(2, '0');
@@ -70,7 +70,7 @@
     </ul>
     <ul class="navbar-nav ml-0">
       <li class="nav-item">
-        <a class="nav-link" href="../login.php">Logout</a>
+        <a class="nav-link" href="../logout.php">Logout</a>
       </li>
     </ul>
   </div>

@@ -1,8 +1,22 @@
+<?php
+// Start session
+session_start();
+
+// Check if user is already logged in
+if (isset($_SESSION['username'])) {
+    // Redirect to appropriate dashboard based on user type
+    if ($_SESSION['user_type'] == 'Admin') {
+        header("Location: admin/dashboard.php");
+    } else {
+        header("Location: user/dashboard.php");
+    }
+    exit; // Ensure script stops execution after redirection
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height,">
     <title>Document</title>
 
     <!--PluginScripts-->
@@ -42,7 +56,7 @@
                         </div>
                       </div>
                     </div>
-                    <form action="#!">
+                    <form action="login_process.php" method="post">
                       <div class="row gy-3 overflow-hidden">
                         <div class="col-12">
                           <div class="form-floating mb-3">
