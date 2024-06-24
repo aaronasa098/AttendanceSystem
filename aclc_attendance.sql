@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2024 at 09:49 PM
+-- Generation Time: Jun 24, 2024 at 09:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -109,7 +109,38 @@ INSERT INTO `dailyattendance` (`entryID`, `DATE`, `TIME`, `USN`, `NAME`, `ATTEND
 ('66', '7/26/2023', '7:01 PM', '67-267-6505', 'Davita Wardhough', 'Web Developer I'),
 ('67', '7/27/2023', '1:43 AM', '56-527-0696', 'Micki Kenninghan', 'Software Consultant'),
 ('68', '7/8/2023', '7:51 PM', '89-067-8120', 'Venus Habben', 'Administrative Assistant I'),
-('', 'Monday, June 24, 2024', '3:45:48 AM', '12312321', '111111', 'SHS student');
+('96', 'Monday, June 24, 2024', '3:45:48 AM', '12312321', '111111', 'SHS student'),
+('', 'June 24, 2024', '2:08:57 PM', '12312321', '12312313123123123', 'SHS student'),
+('', 'June 24, 2024', '2:12:57 PM', '12312321', 'wdadsadsadas', 'SHS student'),
+('', 'June 24, 2024', '2:15:00 PM', '12312312', '12312312', 'College Student'),
+('', '2024-06-24', '09:21:21', '000000000000', '000000000000', 'COLLEGE STUDENT'),
+('', '2024-06-24', '09:21:52', '000000000000', '000000000000', 'COLLEGE STUDENT'),
+('', 'June 24, 2024', '3:23:17 PM', '12312', '123123', 'SHS STUDENT'),
+('', 'June 24, 2024', '3:23:29 PM', '00000000000', '0000000000000', 'SHS STUDENT'),
+('', 'June 24, 2024', '3:24:45 PM', '1231', '555555', 'SHS STUDENT'),
+('', 'June 24, 2024', '3:24:45 PM', '1231', '555555', 'SHS STUDENT'),
+('', 'June 24, 2024', '3:25:22 PM', '00000000000000000BANANANAN', 'BANANANAN', 'Others'),
+('', 'June 24, 2024', '3:25:37 PM', 'pppppppppppppppp', 'ppppppppppppppppp', 'SHS STUDENT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_accounts`
+--
+
+CREATE TABLE `user_accounts` (
+  `User_username` text NOT NULL,
+  `User_password` text NOT NULL,
+  `User_type` text NOT NULL,
+  `User_status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_accounts`
+--
+
+INSERT INTO `user_accounts` (`User_username`, `User_password`, `User_type`, `User_status`) VALUES
+('aaronazopardo@gmail.com', '123123123', 'Admin', 'Active');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
