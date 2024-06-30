@@ -244,6 +244,9 @@ try {
             for (var i = 1; i <= pageCount; i++) {
                 var li = document.createElement("li");
                 li.classList.add("page-item");
+                if (i === currentPage) {
+                    li.classList.add("active"); // Add active class to current page
+                }
                 var link = document.createElement("a");
                 link.classList.add("page-link");
                 link.href = "#";
@@ -300,17 +303,19 @@ try {
             var searchText = document.getElementById("searchInput").value.trim();
             populateTable(currentPage, pageSize, searchText);
             createPaginationLinks(Math.ceil(tableData.length / pageSize));
+            updatePagination();
         }
 
         function updatePagination() {
             var paginationItems = document.querySelectorAll("#pagination .page-item");
-            paginationItems.forEach(function(item, index) {
-                if (index === currentPage) {
-                    item.classList.add("active");
-                } else {
-                    item.classList.remove("active");
-                }
+            paginationItems.forEach(function(item) {
+                item.classList.remove("active");
             });
+
+            var currentPageItem = paginationItems[currentPage+1];
+            if (currentPageItem) {
+                currentPageItem.classList.add("active");
+            }
         }
 
         document.getElementById("searchInput").addEventListener("input", function() {
@@ -318,12 +323,14 @@ try {
             var searchText = this.value.trim();
             populateTable(currentPage, pageSize, searchText);
             createPaginationLinks(Math.ceil(tableData.length / pageSize));
+            updatePagination();
         });
 
         window.onload = function() {
             var searchText = document.getElementById("searchInput").value.trim();
             populateTable(currentPage, pageSize, searchText);
             createPaginationLinks(Math.ceil(tableData.length / pageSize));
+            updatePagination();
         };
     </script>
 </body>
