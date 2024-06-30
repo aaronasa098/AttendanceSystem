@@ -22,12 +22,12 @@ try {
     echo "Error: " . $e->getMessage();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Entry</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 
     <!-- PluginScripts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@ try {
     <script>
         // Define a JavaScript variable to hold the data
         var tableData = <?php echo $json_data; ?>;
-        console.log(tableData);
+
         tableData = [
             { date: "2023-01-15", name: "John Doe", email: "john.doe@example.com" },
             { date: "2023-02-20", name: "Jane Smith", email: "jane.smith@example.com" },
@@ -83,6 +83,7 @@ try {
             { date: "2023-10-03", name: "Ivy Wang", email: "ivy.wang@example.com" }
             // Add more data as needed
         ];
+        
     </script>
 
     <!-- Custom CSS for smaller dropdown -->
@@ -105,9 +106,6 @@ try {
 
             <!-- Page Limit Dropdown -->
             <div class="form-group">
-                <!-- Sorting Buttons -->
-                <button type="button" class="btn btn-primary" id="ascButton" onclick="sortTable('asc')">Asc</button>
-                <button type="button" class="btn btn-primary" id="descButton" onclick="sortTable('desc')">Desc</button>
                 <label for="pageLimitSelect">Items per page:</label>
                 <select class="custom-select custom-select-sm" id="pageLimitSelect" onchange="changePageSize(this.value)">
                     <option value="10">10</option>
@@ -118,6 +116,11 @@ try {
                 </select>
             </div>
 
+            <!-- Sorting Buttons -->
+            <div class="btn-group mb-3">
+                <button type="button" class="btn btn-primary" id="ascButton" onclick="sortTable('asc')">Asc</button>
+                <button type="button" class="btn btn-primary" id="descButton" onclick="sortTable('desc')">Desc</button>
+            </div>
 
             <!-- Table -->
             <table id="dataTable" class="table table-bordered table-striped">
@@ -323,19 +326,5 @@ try {
             createPaginationLinks(Math.ceil(tableData.length / pageSize));
         };
     </script>
-  <link rel="stylesheet" href="../css/Admin_dashboard.css">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap JavaScript and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- DataTables CSS and JS -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
-  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-
-
 </body>
 </html>
