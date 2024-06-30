@@ -5,6 +5,7 @@ $dbname = 'aclc_attendance';
 $username = 'root';
 $password = '';
 
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -21,13 +22,14 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Entry</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 
     <!--PluginScripts-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
@@ -48,12 +50,6 @@ try {
     //console.log(tableData); // Example: Output data to console
 </script>
 
-    <!-- Custom CSS for smaller dropdown -->
-    <style>
-        .custom-select-sm {
-            width: 80px; /* Adjust width as needed */
-        }
-    </style>
 </head>
 
 <body style="margin: 0; padding: 0;"  onload="updateTable()">
@@ -68,7 +64,7 @@ try {
         const itemsPerPage = 10;
         const maxPageNumbers = 10; 
         let sortConditions = [];
-        let isSortingEnabled = false; // Control sorting with a checkbox
+        let isSortingEnabled = true; // Control sorting with a checkbox
 
         function renderTable(data) {
             const tableBody = document.getElementById('dataTableBody');
@@ -156,7 +152,7 @@ try {
                 filteredData.sort((a, b) => {
                     for (const condition of sortConditions) {
                         const { column, direction } = condition;
-                        const comparison = direction === 'asc'
+                        const comparison = direction === 'desc'
                             ? a[column] > b[column] ? 1 : -1
                             : a[column] < b[column] ? 1 : -1;
                         if (comparison !== 0) {
@@ -226,7 +222,7 @@ try {
             currentPage = 1;
             updateTable();
         }
-        var DBcontentCheck = setInterval(setupTable, 1000);
+        //var DBcontentCheck = setInterval(setupTable, 1000);
     </script>     
 
 <div class="container mt-3 mb-3 rounded text-nowrap" style="border: solid 10px; background-color: white; min-height: 625px;">
@@ -252,7 +248,6 @@ try {
                 id="sortToggleCheckbox"
                 onchange="toggleSorting(this.checked)"
                 checked
-                disabled = true
             />
             <label for="sortToggleCheckbox">Enable Sorting</label>
 

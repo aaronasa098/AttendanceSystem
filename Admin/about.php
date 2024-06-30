@@ -1,3 +1,14 @@
+<?php
+// Start session
+session_start();
+
+// Check if user is already logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect to appropriate dashboard based on user type
+    header("Location: ../index.php");
+    exit; // Ensure script stops execution after redirection
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
